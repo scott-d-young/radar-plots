@@ -1,0 +1,56 @@
+
+<!DOCTYPE html5>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Radars</title>
+     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+
+    <div id="radar" style="width:700px"></div>
+
+    <script>
+    data = [
+        {
+          type: 'scatterpolar',
+          r: [3, 3, 2, 1, 1],
+          theta: ['Architecture','Engineering','DevOps/Cloud Ops','QA', 'Product Management', 'Product Strategy', 'UX/CX'],
+          fill: 'toself',
+          name: 'Ref Project #1'
+        },
+        {
+          type: 'scatterpolar',
+          r: [1, 4, 3, 1, 5, 4],
+          theta: ['Architecture','Engineering','DevOps/Cloud Ops','QA', 'Product Management', 'Product Strategy', 'UX/CX'],
+          fill: 'toself',
+          name: 'Ref Project #2'
+        },
+        {
+        type: 'scatterpolar',
+        r: [4, 3, 1, 5, 4,1],
+        theta: ['Architecture','Engineering','DevOps/Cloud Ops','QA', 'Product Management', 'Product Strategy', 'UX/CX'],
+        fill: 'toself',
+        name: 'This Project'
+      },
+      ]
+
+    layout = {
+      title: 'Project Radar Charts',
+      polar: {
+        radialaxis: {
+          visible: true,
+          range: [0, 5],
+        }
+      },
+      showlegend: true
+    }
+
+    Plotly.newPlot("radar", data, layout)
+    </script>
+
+<script>
+
+
+  </body>
+</html>
